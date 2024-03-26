@@ -4,5 +4,6 @@ export const types={
     plus:'plus',
     minus:' minus',
     multiplication:'multiplication',
-    division:' division'
+    division:' division',
+    users:' users'
 }

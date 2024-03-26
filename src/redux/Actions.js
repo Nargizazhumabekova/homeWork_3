@@ -1,44 +1,30 @@
 import {types} from "./Types"
 
- export function plusAction(number){
-  return{
-      type:types.plus,
-       payload:number
-   }
-
+export function asyncFunctionAction(){
+ return function (){
+  setTimeout(()=>{
+   alert("hello")
+  },2000)
  }
-  export function minusAction(number){
-  return{
-      type:types.minus,
-       payload:number
-   }
-
+}
+function getUsersAction(users){
+ return{
+  type:types.users,
+  payload:users
  }
+}
 
- export function multiplicationAction(number){
-  return{
-      type:types.multiplication,
-       payload:number
-   }
+export default function fetchUsersAction(id) {
+ return async function(dispatch){
+  const response=await fetch(`https://jsonplaceholder.typicode.com/users/`)
+  const data=await response.json()
+  dispatch(getUsersAction(data))
  }
+}
 
-  export function divisionAction(number){
-  return{
-      type:types.division,
-       payload:number
-   }
+export function fetchUserOneInfo(id){
+ return async function (){
+  const response=await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+  const data=await response.json()
  }
-
-  export function inputNum1ChangeAction(num1){
-  return{
-      type:types.num1,
-       payload:num1
-   }
- }
-
- export function inputNum2ChangeAction(num2){
-  return{
-      type:types.num2,
-       payload:num2
-   }
- }
+}
