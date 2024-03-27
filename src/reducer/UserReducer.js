@@ -1,8 +1,8 @@
-import {types} from "../Types"
+import {types} from "..redux/Types"
 const initialState={
  users:[]
 }
-export default function titleReducer(state=initialState,action){
+export default function usersReducer(state=initialState,action){
 
 if(action.type===types.users){
     switch (action.type){

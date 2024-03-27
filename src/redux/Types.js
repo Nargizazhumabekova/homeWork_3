@@ -1,9 +1,8 @@
 export const types={
-    num1:'num1',
-    num2:'num2',
-    plus:'plus',
-    minus:' minus',
-    multiplication:'multiplication',
-    division:' division',
+    value:'value',
+    delete:'delete',
+    ADD:'ADD',
+    With_Params:'With_Params',
+    Change_Title:' Change_Title',
     users:' users'
 }
